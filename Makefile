@@ -6,7 +6,7 @@
 #    By: voliynik <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/26 16:30:03 by voliynik          #+#    #+#              #
-#    Updated: 2017/03/25 15:27:23 by voliynik         ###   ########.fr        #
+#    Updated: 2017/03/29 20:50:45 by voliynik         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME = filler
 NAMELIB = libft.a
 
 SRC	=	ft_fill_er.c \
-		ft_read.c
+		ft_read.c \
+		ft_logic.c
 
 OBJ		= $(addprefix $(OBJDIR), $(SRC:.c=.o))
 
@@ -42,7 +43,7 @@ $(OBJDIR)%.o: $(SRCDIR)%.c
 
 $(NAME): $(NAMELIB) $(OBJ)
 	@$(CC) -o $(NAME) $(OBJ) -L. -lft
-	@echo "\n\x1b[32mPush swap has been created\x1b[0m"
+	@echo "\n\x1b[32mFiller has been created\x1b[0m"
 
 $(NAMELIB):
 	@cd $(LIBDIR); make; make clean; mv $(NAMELIB) ../;

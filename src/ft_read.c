@@ -6,7 +6,9 @@ int 	ft_get_player(t_fi *ller)
 
 	get_next_line(0, &src);
 	if (ft_strcmp(src, "$$$ exec p"))
-		ller->pl = src[10] - '0';
+		if ((ller->pl = src[10] - '0') == 2)
+			ller->pl = 0;
+			
 	return (0);
 }
 

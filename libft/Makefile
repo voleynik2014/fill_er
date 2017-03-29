@@ -6,7 +6,7 @@
 #    By: voliynik <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/26 12:54:12 by voliynik          #+#    #+#              #
-#    Updated: 2017/03/17 18:54:21 by voliynik         ###   ########.fr        #
+#    Updated: 2017/03/29 20:48:53 by voliynik         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,8 @@ SRC=ft_isascii.c	ft_memcpy.c		ft_strchr.c		ft_strlen.c		ft_strrchr.c 					\
 	ft_lstdelone.c	ft_lstdel.c		ft_lstadd.c		ft_lstiter.c	ft_lstmap.c 	ft_get_next_line.c \
 	ft_padding.c	ft_putwchar.c 	ft_type_di.c 	ft_type_s.c		ft_put_uintmax.c ft_type_ox.c 	\
 	ft_specifiers.c ft_specifiers2.c 				ft_padding_str.c 				ft_type_wchar.c \
-	ft_color.c 		ft_strndup.c	ft_itoa_base.c	ft_itoa_ll.c	ft_putnstr.c 	ft_printf.c\
+	ft_color.c 		ft_strndup.c	ft_itoa_base.c	ft_itoa_ll.c	ft_putnstr.c 	ft_printf.c \
+	ft_squere.c
 
 
 OBJ	= $(SRC:.c=.o)

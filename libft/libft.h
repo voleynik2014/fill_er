@@ -6,7 +6,7 @@
 /*   By: voliynik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 12:56:53 by voliynik          #+#    #+#             */
-/*   Updated: 2017/03/25 16:16:00 by voliynik         ###   ########.fr       */
+/*   Updated: 2017/03/29 18:05:41 by voliynik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_itoa(int n);
+int					ft_squere(int n, int squere);
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
 void				ft_putendl(char const *s);
