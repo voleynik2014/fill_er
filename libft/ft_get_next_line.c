@@ -49,7 +49,7 @@ int		split(char **buffer, char **line, char c)
 		return (0);
 	i = point - *buffer;
 	ft_strdel(line);
-	*line = ft_strnew(i);
+	*line = ft_strnew(i + 1);
 	*line = ft_strncpy(*line, *buffer, i);
 	tmp = ft_strdup(point + 1);
 	free(*buffer);

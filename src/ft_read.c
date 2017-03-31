@@ -19,6 +19,7 @@ char		**ft_create_field(t_fi *ller)
 	int		i;
 
 	get_next_line(0, &src);
+	fprintf(ller->f, "%s - %d\n", src, ller->size_x);
 	if (ft_strcmp(src, "Plateau "))
 	{
 		arr = ft_strsplit(src + 8, ' ');
@@ -33,12 +34,21 @@ char		**ft_create_field(t_fi *ller)
 	}
 	arr = (char **)malloc(sizeof(char *) * ller->size_x + 1);
 	get_next_line(0, &src);
+//	arr[10] = ft_strdup(src + 4);
+	free(src);
 	i = -1;
 	while (++i < ller->size_x)
 	{
+		fprintf(ller->f ,"start\n");
 		get_next_line(0, &src);
-		arr[i] = ft_strdup(src + 4);
+		arr[i] = ft_strdup(&src[4]);
+		fprintf(ller->f, "%s - %d\n", src, ller->size_x);
+		fprintf(ller->f ,"free\n");
+		free(src);
+//		if (i == 9)
+//		fclose(ller->f);
 	}
+	fclose(ller->f);
 	arr[i] = NULL;
 	return (arr);
 }

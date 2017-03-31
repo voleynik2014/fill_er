@@ -16,6 +16,7 @@ typedef struct 	s_fi
 	int			y;
 	int			res_x;
 	int			res_y;
+	FILE		*f;
 }				t_fi;
 
 int				ft_get_player(t_fi *ller);

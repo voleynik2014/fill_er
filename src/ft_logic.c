@@ -19,7 +19,7 @@ int		check_insert_shape(char **shape, char **field, t_fi *ller)
 	int sym;
 	int count;
 
-	if ((ller->fig_size_y + ller->y > ller->size_x) || (ller->fig_size_x + ller->x > ller->size_y))
+	if ((ller->fig_size_y + ller->y > ller->size_y) || (ller->fig_size_x + ller->x > ller->size_x))
 		return (0);
 	sym = ller ? 'X' : 'O';
 	count = 0;
@@ -34,8 +34,8 @@ int		check_insert_shape(char **shape, char **field, t_fi *ller)
 				if (field[ller->x + x][ller->y + y] == sym)
 				{
 					count++;
-					ft_printf("%d %d %d\n", count, ller->x + x, ller->y + y);
-					ft_printf("A%d %dA", ller->x, ller->y);
+//					ft_printf("%d %d %d\n", count, ller->x + x, ller->y + y);
+//					ft_printf("A%d %dA", ller->x, ller->y);
 				}
 				else if (field[ller->x + x][ller->y + y] == (sym == 'X' ? 'O' : 'X'))
 					return (0);
@@ -52,6 +52,7 @@ int		ft_test_distance(t_fi *ller, int x2, int y2, int *dist)
 	int	tmp;
 
 	tmp = ft_squere(x2 - ller->x, 2) + ft_squere(y2 - ller->y, 2);
+//	ft_printf("OK\n");
 	if (tmp < (*dist))
 	{
 		ller->res_x = ller->x;
@@ -67,13 +68,13 @@ void	ft_my_xy_to_cont_xy(t_fi *ller, char **field, int *dist)
 	int	y_cont;
 
 	x_cont = -1;
-	ft_printf("OK");
 	while (++x_cont < ller->size_x)
 	{
 		y_cont = -1;
 		while (++y_cont < ller->size_y)
 		{
-			if (field[x_cont][y_cont] == (ller->pl ? 'O' : 'X' || ller->pl ? 'o' : 'x'))
+//			ft_printf("OK");
+			if (field[x_cont][y_cont] == (ller->pl ? 'O' : 'X'))// || ller->pl ? 'o' : 'x'))
 				ft_test_distance(ller, x_cont, y_cont, dist);
 		}
 	}
@@ -83,6 +84,7 @@ void	ft_filler(char **shape, char **field, t_fi *ller)
 {
 	int	dist;
 
+//		sleep(999);
 	dist = 99999999;
 	ller->x = -1;
 	while (++ller->x < ller->size_x)
@@ -91,6 +93,6 @@ void	ft_filler(char **shape, char **field, t_fi *ller)
 		while(++ller->y < ller->size_y)
 			if (check_insert_shape(shape, field, ller))
 				ft_my_xy_to_cont_xy(ller, field, &dist);
-		ft_printf("|%d %d|\n", ller->x, ller->y);
+//		ft_printf("|%d %d|\n", ller->x, ller->y);
 	}
 }
